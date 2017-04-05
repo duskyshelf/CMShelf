@@ -7,7 +7,15 @@
 
 //example of using a message handler from the inject scripts
 chrome.extension.onMessage.addListener(
-  function(request, sender, sendResponse) {
+  (request, sender, sendResponse) => {
   	chrome.pageAction.show(sender.tab.id);
     sendResponse();
   });
+
+const doStuffWithDom = (domContent) => {
+    alert('I received the following DOM content:\n' + domContent);
+}
+
+chrome.browserAction.onClicked.addListener((tab) => {
+  chrome.tabs.sendMessage(tab.id, {text: 'report_back'}, doStuffWithDom);
+});
