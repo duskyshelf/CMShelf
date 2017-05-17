@@ -20,6 +20,7 @@ const doStuffWithDom = (domContent) => {
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   xhr.onload = function () {
     // do something to response
+    alert('submitted');
   };
   xhr.send('id=1&content=' + domContent);
     // alert('I received the following DOM content:\n' + domContent);
