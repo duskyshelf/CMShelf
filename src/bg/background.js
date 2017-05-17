@@ -13,7 +13,16 @@ chrome.extension.onMessage.addListener(
   });
 
 const doStuffWithDom = (domContent) => {
-    alert('I received the following DOM content:\n' + domContent);
+
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'http://localhost:3000/update', true);
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.onload = function () {
+    // do something to response
+  };
+  xhr.send('id=1&content=' + domContent);
+    // alert('I received the following DOM content:\n' + domContent);
 }
 
 chrome.browserAction.onClicked.addListener((tab) => {
