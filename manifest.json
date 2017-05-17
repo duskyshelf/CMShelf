@@ -1,6 +1,6 @@
 {
   "name": "CMShelf",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "manifest_version": 2,
   "description": "This extension was created with the awesome extensionizr.com",
   "homepage_url": "http://extensionizr.com",
@@ -29,7 +29,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*/*"
+        "https://*/*",
+        "http://*/*"
       ],
       "js": [
         "src/inject/inject.js"
