@@ -16,7 +16,7 @@ const doStuffWithDom = (domContent) => {
 
 
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'http://localhost:3000/update', true);
+  xhr.open('POST', 'http://localhost:3100/update', true);
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   xhr.onload = function () {
     // do something to response
