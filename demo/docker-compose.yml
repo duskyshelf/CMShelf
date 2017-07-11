@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo:3
+    ports:
+      - '27017:27017'
+
+  mongo_api:
+    image: duskyshelf/express_mongo_api:latest
+    ports:
+      - '3100:3100'
+    links:
+      - mongo
+
+  app:
+    image: duskyshelf/content-site:latest
+    ports:
+      - '8080:8080'
