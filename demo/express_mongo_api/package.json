@@ -1,0 +1,20 @@
+{
+  "name": "express-mongo-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "seeddb": "mongoimport --db=default --collection=posts --type=json --jsonArray ./mongoseeds/posts.json",
+    "dropdb": "mongo default --eval 'db.dropDatabase()'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "express": "^4.13.4",
+    "mongodb": "^2.1.7"
+  }
+}

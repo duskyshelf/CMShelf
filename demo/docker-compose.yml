@@ -7,13 +7,13 @@ services:
       - '27017:27017'
 
   mongo_api:
-    image: duskyshelf/express_mongo_api:latest
+    build: ./express_mongo_api
     ports:
       - '3100:3100'
     links:
       - mongo
 
   app:
-    image: duskyshelf/content-site:latest
+    build: ./content-site
     ports:
       - '8080:8080'
