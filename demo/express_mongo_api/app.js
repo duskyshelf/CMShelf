@@ -60,6 +60,8 @@ app.post('/new', (req, res, next) => {
   const id = req.body.id;
   const content = req.body.content;
 
+  console.log('new post: ', req.body, id, content)
+
   if (id == '' || content == '') {
     console.log("all fields must be filled");
     res.redirect('/');
@@ -78,7 +80,7 @@ app.post('/update', function(req, res, next) {
   const id = req.body.id;
   const content = req.body.content;
 
-  console.log('post: ', id, content)
+  console.log('update post: ', req.body, id, content)
 
   if (id == '' || content == '') {
     console.log("all fields must be filled");
