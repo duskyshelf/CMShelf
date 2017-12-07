@@ -1,1 +1,2 @@
-./data/diagnostic.data/*
+/data/diagnostic.data/*
+/demo/data/diagnostic.data/*

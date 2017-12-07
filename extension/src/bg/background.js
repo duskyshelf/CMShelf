@@ -12,18 +12,23 @@ chrome.extension.onMessage.addListener(
     sendResponse();
   });
 
-const doStuffWithDom = (domContent) => {
+const doStuffWithDom = (data) => {
+
+  data.forEach(element => {
+    const id = element.id;
+    const domContent = element.content;
 
 
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'http://localhost:3100/update', true);
-  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  xhr.onload = function () {
-    // do something to response
-    alert('submitted');
-  };
-  xhr.send('id=1&content=' + domContent);
-    // alert('I received the following DOM content:\n' + domContent);
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'http://localhost:3100/update', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = function () {
+      // do something to response
+      alert(`submitted. id: ${id}. domContent: ${domContent}`);
+    };
+    xhr.send(`id=${id}&content=${domContent}`);
+      // alert('I received the following DOM content:\n' + domContent);
+  })
 }
 
 chrome.browserAction.onClicked.addListener((tab) => {
