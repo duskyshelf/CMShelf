@@ -16,6 +16,6 @@ services:
       - mongo
 
   app:
-    build: ./content-site
+    build: ./demo-site
     ports:
       - '8080:8080'

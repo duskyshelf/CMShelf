@@ -5,7 +5,7 @@ class ContentBlock extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { data: "no data" };
+    this.state = { data: "loading" };
     this.id = this.props.contentId;
   }
 
