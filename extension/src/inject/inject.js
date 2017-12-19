@@ -28,7 +28,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         const elements = document.querySelectorAll('p.App-intro');
         let data = []
         elements.forEach(element => {
-          data.push({ content: element.innerHTML, id: element.classList[1].split('-')[1]})
+          data.push({ content: element.innerHTML, id: element.getAttribute('cmsid')})
         })
         sendResponse(data);
     }

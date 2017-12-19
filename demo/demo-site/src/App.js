@@ -7,7 +7,7 @@ const App = () => (
   <div className="App">
     <div className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <h2>Welcome to React</h2>
+      <h2>Example Content Site</h2>
     </div>
     <ContentBlock contentId={1} />
     <ContentBlock contentId={2} />

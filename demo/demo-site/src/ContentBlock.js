@@ -17,7 +17,7 @@ class ContentBlock extends Component {
 
   render() {
     return (
-        <p className={`App-intro content-${this.id}`}>
+        <p className={'App-intro'} cmsId={this.id}>
           { this.state.data }
         </p>
     );

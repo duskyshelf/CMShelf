@@ -18,4 +18,4 @@ services:
   app:
     build: ./demo-site
     ports:
-      - '8080:8080'
+      - '3000:3000'
