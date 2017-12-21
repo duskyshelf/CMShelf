@@ -32,5 +32,8 @@ const doStuffWithDom = (data) => {
 }
 
 chrome.browserAction.onClicked.addListener((tab) => {
-  chrome.tabs.sendMessage(tab.id, {text: 'report_back'}, doStuffWithDom);
+  console.log('editor.js')
+  chrome.tabs.executeScript(tab.id, {file: 'src/inject/editor.js'})
+  // chrome.tabs.sendMessage(tab.id, {text: 'report_back'}, doStuffWithDom);
+
 });
