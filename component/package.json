@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "bundle": "parcel build editor.js --out-dir ../extension/src/inject"
+    "bundle": "parcel App.jsx --out-dir ../extension/src/inject"
   },
   "devDependencies": {
     "babel-preset-react": "^6.24.1",
