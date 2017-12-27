@@ -12,8 +12,8 @@ chrome.extension.sendMessage({}, (response) => {
 
       elements.forEach(element => {
         console.log(element);
-        element.setAttribute('contenteditable', "true");
-        element.setAttribute("style", "border-style: solid;border-color: red");
+        // element.setAttribute('contenteditable', "true");
+        // element.setAttribute("style", "border-style: solid;border-color: red");
       })
     }
   }, 10);
