@@ -29,7 +29,7 @@ class App extends Component {
   }
 }
 
-const elements = document.querySelectorAll('p.App-intro');
+const elements = document.querySelectorAll('.App-intro');
 elements.forEach(element => {
   const content = element.innerHTML;
   const id = element.getAttribute('cmsid');
