@@ -17,9 +17,7 @@ class ContentBlock extends Component {
 
   render() {
     return (
-        <p className={'App-intro'} cmsId={this.id}>
-          { this.state.data }
-        </p>
+      <div className={'App-intro'} cmsId={this.id} dangerouslySetInnerHTML={{ __html: this.state.data }} />
     );
   }
 }
