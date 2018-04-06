@@ -1,2 +1,6 @@
 /data/diagnostic.data/*
 /demo/data/diagnostic.data/*
+*.log
+node_modules
+extension/src/inject/*
+.cache

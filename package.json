@@ -1,0 +1,30 @@
+{
+  "name": "cmshelf",
+  "version": "1.0.0",
+  "description": "Extension based CMS designed to allow for browser-based editing without the need for a visible back-end for users to worry about.",
+  "main": "index.js",
+  "scripts": {
+    "build:component": "parcel ./component/App.jsx --out-dir ./extension/src/inject",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duskyshelf/CMShelf.git"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.2.1"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-portal": "^4.1.3",
+    "react-rte": "^0.16.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duskyshelf/CMShelf/issues"
+  },
+  "homepage": "https://github.com/duskyshelf/CMShelf#readme"
+}

@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import * as ReactDOM from 'react-dom'
 import RichTextEditor from 'react-rte'
 import RichEditor from './RichEditor'
 import SubmitButton from './SubmitButton'
+import Portal from 'react-portal'
+// import Event from 'events'
 
 const hideButtonStyle = {
   position: 'absolute',
@@ -14,35 +16,44 @@ const containerStyle = {
   position: 'relative'
 }
 
+const stateChange = new Event('stateChange')
+let state = { visible: true }
+const toggleEditorView = () => {
+  state = { visible: !state.visible }
+  document.dispatchEvent(stateChange)
+}
+
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: true,
+      visible: state.visible,
       content: RichTextEditor.createValueFromString(props.content, 'html'),
       id: props.id
     };
 
     this.onChange = this.onChange.bind(this);
-    this.toggleView = this.toggleView.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener('stateChange', () => {
+      this.setState({ visible: state.visible })
+    })
   }
 
   onChange(content) {
     this.setState({ content });
   }
 
-  toggleView() {
-    this.setState({ visible: !this.state.visible })
-  }
-
-
-
   render() {
     const { content, id, visible } = this.state
 
     return (
       <div style={containerStyle}>
-        <button className='cmshelf-hide-button' onClick={this.toggleView} style={hideButtonStyle}>hide/show</button>
+        <button className='cmshelf-hide-button' onClick={toggleEditorView} style={hideButtonStyle}>
+          hide/show
+        </button>
         { visible &&
           <div>
             <RichEditor value={content} onChange={this.onChange} />
@@ -57,9 +68,11 @@ class App extends Component {
   }
 }
 
+
 const elements = document.querySelectorAll('.App-intro');
 elements.forEach(element => {
   const content = element.innerHTML;
   const id = element.getAttribute('cmsid');
   ReactDOM.render(<App content={content} id={id}/>, element);
 });
+
