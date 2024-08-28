@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styles from "./contentBlock.module.css";
 
 const ContentLoader = ({ contentId }) => {
   const [content, setContent] = useState("");
@@ -15,8 +16,8 @@ const ContentLoader = ({ contentId }) => {
   }, [contentId]);
 
   return (
-    <div className={"App-intro"} cmsId={contentId}>
-      {content}
+    <div cmsId={contentId}>
+      <div className={styles.ContentBlock}>{content}</div>
     </div>
   );
 };

@@ -6,11 +6,13 @@ const App = () => (
   <div className="App">
     <div className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <h2>Example Content Site 2</h2>
+      <h2>Example Content Site</h2>
     </div>
-    <ContentBlock contentId={1} />
-    <ContentBlock contentId={2} />
-    <ContentBlock contentId={3} />
+    <div className="ContentWrapper">
+      <ContentBlock contentId={1} />
+      <ContentBlock contentId={2} />
+      <ContentBlock contentId={3} />
+    </div>
   </div>
 );
 

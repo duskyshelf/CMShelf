@@ -21,3 +21,10 @@ services:
       - "3000:3000"
     environment:
       - CHOKIDAR_USEPOLLING=true
+    develop:
+      watch:
+        - action: sync
+          path: ./demo-site
+          target: /src/demo-site
+          ignore:
+            - node_modules/

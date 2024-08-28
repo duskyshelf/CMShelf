@@ -18,8 +18,9 @@
   font-size: 1.5em;
 }
 
-.App-intro {
-  font-size: large;
+.ContentWrapper {
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {

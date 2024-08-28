@@ -1,0 +1,26 @@
+.X-rGNW_ContentBlockEditorWrapper {
+  flex-direction: column;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  position: relative;
+}
+
+.X-rGNW_ContentBlockEditor {
+  appearance: none;
+  overflow-wrap: normal;
+  border: solid #000;
+  border-radius: 25px;
+  width: 100px;
+  height: 200px;
+  margin: 20px;
+  padding: 20px;
+  font-size: large;
+}
+
+.KmQ0tq_SubmitButton {
+  position: absolute;
+  top: 225px;
+  left: 60px;
+}
+/*# sourceMappingURL=App.css.map */

@@ -1,37 +1,26 @@
-import React, { Component } from 'react'
-import * as ReactDOM from 'react-dom'
-import RichTextEditor from 'react-rte';
-import RichEditor from './RichEditor'
-import SubmitButton from './SubmitButton'
+import { useState } from "react";
+import { createRoot } from "react-dom/client";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      content: RichTextEditor.createValueFromString(props.content, 'html'),
-      id: props.id
-    };
+import ContentBlockEditor from "./Components/ContentBlockEditor";
 
-    this.onChange = this.onChange.bind(this);
-  }
+const EditableBlock = ({ content, id }) => {
+  const [editedContent, setContent] = useState(content);
 
-  onChange(content) {
-    this.setState({ content });
-  }
+  return (
+    <div>
+      <ContentBlockEditor
+        value={editedContent}
+        onChange={setContent}
+        contentId={id}
+      />
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div>
-        <RichEditor value={this.state.content} onChange={this.onChange} />
-        <SubmitButton value={this.state.content} contentId={this.state.id} />
-      </div>
-    )
-  }
-}
-
-const elements = document.querySelectorAll('.App-intro');
-elements.forEach(element => {
-  const content = element.innerHTML;
-  const id = element.getAttribute('cmsid');
-  ReactDOM.render(<App content={content} id={id}/>, element);
+const elements = document.querySelectorAll("[cmsid]");
+elements.forEach((element) => {
+  const domNode = createRoot(element);
+  const content = element.children[0].innerHTML;
+  const id = element.getAttribute("cmsid");
+  domNode.render(<EditableBlock content={content} id={id} />);
 });
