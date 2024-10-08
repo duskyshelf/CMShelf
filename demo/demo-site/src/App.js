@@ -1,7 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
-import ContentBlock from './ContentBlock';
-import './App.css';
+import logo from "./logo.svg";
+import ContentBlock from "./components/ContentBlock";
+import "./App.css";
 
 const App = () => (
   <div className="App">
@@ -9,9 +8,11 @@ const App = () => (
       <img src={logo} className="App-logo" alt="logo" />
       <h2>Example Content Site</h2>
     </div>
-    <ContentBlock contentId={1} />
-    <ContentBlock contentId={2} />
-    <ContentBlock contentId={3} />
+    <div className="ContentWrapper">
+      <ContentBlock contentId={1} />
+      <ContentBlock contentId={2} />
+      <ContentBlock contentId={3} />
+    </div>
   </div>
 );
 

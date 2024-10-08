@@ -1,0 +1,10 @@
+.ContentBlock {
+  width: 100px;
+  height: 200px;
+  font-size: large;
+  border: solid black;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  overflow-wrap: normal;
+}

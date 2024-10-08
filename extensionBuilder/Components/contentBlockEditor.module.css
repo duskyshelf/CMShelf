@@ -1,0 +1,21 @@
+.ContentBlockEditorWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 300px;
+}
+
+.ContentBlockEditor {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 200px;
+  font-size: large;
+  border: solid black;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 25px;
+  overflow-wrap: normal;
+}

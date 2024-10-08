@@ -1,15 +1,23 @@
-FROM node:6
+# Use an official Node runtime as a parent image
+FROM node:16
 
-# Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+# Set the working directory to /app
+WORKDIR /app
 
-# Install app dependencies
-COPY package.json /usr/src/app/
+# Copy the package.json and package-lock.json to the working directory
+COPY ./package*.json ./
+
+# Install the dependencies
 RUN npm install
 
-# Bundle app source
-COPY . /usr/src/app
+# Copy the remaining application files to the working directory
+COPY . .
 
-EXPOSE 8080
-CMD [ "npm", "start" ]
+# Build the application
+RUN npm run build
+
+# Expose port 3000 for the application
+EXPOSE 3000
+
+# Start the application
+CMD [ "npm", "run", "start" ]
